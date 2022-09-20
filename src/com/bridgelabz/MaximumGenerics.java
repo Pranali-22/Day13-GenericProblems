@@ -14,42 +14,54 @@ public class MaximumGenerics {
 	 */
 	
 	//Find maximum among 3 integers
-	public static void maximumof3Integer(Integer num1, Integer num2, Integer num3) {
-		Integer max = num1;
-		if(num2.compareTo(max) > 0) {
-			max=num2;
+		public static void maximumof3(Integer[] integerNumberArray) {
+			Integer max = integerNumberArray[0];
+			for(Integer e : integerNumberArray) {
+				if(e.compareTo(max) > 0) {
+					max=e;
+				}
+			}
+			
+			System.out.println("Maximum Integer = "+max);
 		}
 		
-		if(num3.compareTo(max) > 0) {
-			max=num3;
+		//Find maximum among 3 float
+		public static void maximumof3(Float[] integerFloatArray) {
+			
+			Float max = integerFloatArray[0];
+			for(Float e : integerFloatArray) {
+				if(e.compareTo(max) > 0) {
+					max=e;
+				}
+			}
+			System.out.println("Maximum of float = "+max);
 		}
 		
-		System.out.println("Maximum of integer = "+max);
-	}
-	
-	//Find maximum among 3 float
-	public static void maximumof3Float(Float num1, Float num2, Float num3) {
-		Float max = num1;
-		if(num2.compareTo(max) > 0) {
-			max=num2;
+		//Find maximum among 3 float
+		public static void maximumof3(String[] stringArray) {
+				
+			String max = stringArray[0];
+			for(String e : stringArray) {
+				if(e.compareTo(max) > 0) {
+					max=e;
+				}
+			}
+			System.out.println("Maximum of float = "+max);
 		}
 		
-		if(num3.compareTo(max) > 0) {
-			max=num3;
+		public static void main(String[] args) {
+			//maximum for integer numbers
+			Integer[] integerNumber = {10,25,17};
+			MaximumGenerics.maximumof3(integerNumber);
+			
+			//maximum for float numbers
+			Float[] floatNumber = {(float) 1.1, (float) 2.2, (float) 3.3} ;
+			MaximumGenerics.maximumof3(floatNumber);
+			
+			//maximum for String
+			String[] stringValue = {"Pranali","Tani","Rutuja"} ;
+			MaximumGenerics.maximumof3(stringValue);
+			
 		}
-		
-		System.out.println("Maximum of float = "+max);
-	}
-	
-	public static void main(String[] args) {
-		//maximum for integer numbers
-		Integer integerNum1=10, integerNum2=25, integerNum3=16;
-		MaximumGenerics.maximumof3Integer(integerNum1,integerNum1,integerNum1);
-		
-		//maximum for float numbers
-		Float floatNum1 = (float) 1.1 , floatNum2 = (float) 2.2, floatNum3 = (float) 3.3; 
-		MaximumGenerics.maximumof3Float(floatNum1, floatNum2, floatNum3);
-		
-	}
 
 }

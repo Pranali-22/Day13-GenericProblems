@@ -12,7 +12,9 @@ public class MaximumGenerics {
 	/**
 	 * @param args
 	 */
-	public static void maximumof3(Integer num1, Integer num2, Integer num3) {
+	
+	//Find maximum among 3 integers
+	public static void maximumof3Integer(Integer num1, Integer num2, Integer num3) {
 		Integer max = num1;
 		if(num2.compareTo(max) > 0) {
 			max=num2;
@@ -22,11 +24,32 @@ public class MaximumGenerics {
 			max=num3;
 		}
 		
-		System.out.println("Maximum = "+max);
+		System.out.println("Maximum of integer = "+max);
 	}
+	
+	//Find maximum among 3 float
+	public static void maximumof3Float(Float num1, Float num2, Float num3) {
+		Float max = num1;
+		if(num2.compareTo(max) > 0) {
+			max=num2;
+		}
+		
+		if(num3.compareTo(max) > 0) {
+			max=num3;
+		}
+		
+		System.out.println("Maximum of float = "+max);
+	}
+	
 	public static void main(String[] args) {
-		Integer num1=10, num2=25, num3=16;
-		MaximumGenerics.maximumof3(num1,num2,num3);
+		//maximum for integer numbers
+		Integer integerNum1=10, integerNum2=25, integerNum3=16;
+		MaximumGenerics.maximumof3Integer(integerNum1,integerNum1,integerNum1);
+		
+		//maximum for float numbers
+		Float floatNum1 = (float) 1.1 , floatNum2 = (float) 2.2, floatNum3 = (float) 3.3; 
+		MaximumGenerics.maximumof3Float(floatNum1, floatNum2, floatNum3);
+		
 	}
 
 }

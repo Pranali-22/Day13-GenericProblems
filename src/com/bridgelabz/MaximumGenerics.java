@@ -46,7 +46,7 @@ public class MaximumGenerics {
 					max=e;
 				}
 			}
-			System.out.println("Maximum of float = "+max);
+			System.out.println("Maximum of String = "+max);
 		}
 		
 		public static void main(String[] args) {

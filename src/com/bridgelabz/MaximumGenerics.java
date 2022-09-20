@@ -12,21 +12,21 @@ public class MaximumGenerics {
 	/**
 	 * @param args
 	 */
-	public static void maximumof3(Integer num1, Integer num2, Integer num3) {
-		Integer max = num1;
-		if(num2.compareTo(max) > 0) {
-			max=num2;
+	//Find maximum among 3 integers
+	public static void maximumof3(Integer[] integerNumberArray) {
+		Integer max = integerNumberArray[0];
+		for(Integer e : integerNumberArray) {
+			if(e.compareTo(max) > 0) {
+				max=e;
+			}
 		}
 		
-		if(num3.compareTo(max) > 0) {
-			max=num3;
-		}
-		
-		System.out.println("Maximum = "+max);
+		System.out.println("Maximum Integer = "+max);
 	}
 	public static void main(String[] args) {
-		Integer num1=10, num2=25, num3=16;
-		MaximumGenerics.maximumof3(num1,num2,num3);
+		//maximum for integer numbers
+		Integer[] integerNumber= {10,25,17};
+		MaximumGenerics.maximumof3(integerNumber);
 	}
 
 }

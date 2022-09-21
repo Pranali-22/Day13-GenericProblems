@@ -14,53 +14,29 @@ public class MaximumGenerics {
 	 */
 	
 	//Find maximum among 3 integers
-		public static void maximumof3(Integer[] integerNumberArray) {
-			Integer max = integerNumberArray[0];
-			for(Integer e : integerNumberArray) {
-				if(e.compareTo(max) > 0) {
-					max=e;
-				}
+		public static <E extends Comparable<E>> E maximumof3(E input1, E input2, E input3) {
+			E max = input1;
+			if(input2.compareTo(max) > 0) {
+					max=input2;
 			}
-			
-			System.out.println("Maximum Integer = "+max);
-		}
-		
-		//Find maximum among 3 float
-		public static void maximumof3(Float[] integerFloatArray) {
-			
-			Float max = integerFloatArray[0];
-			for(Float e : integerFloatArray) {
-				if(e.compareTo(max) > 0) {
-					max=e;
-				}
+			if(input3.compareTo(max) > 0) {
+				max=input3;
 			}
-			System.out.println("Maximum of float = "+max);
+			return max;
 		}
-		
-		//Find maximum among 3 float
-		public static void maximumof3(String[] stringArray) {
-				
-			String max = stringArray[0];
-			for(String e : stringArray) {
-				if(e.compareTo(max) > 0) {
-					max=e;
-				}
-			}
-			System.out.println("Maximum of float = "+max);
-		}
-		
+					
 		public static void main(String[] args) {
 			//maximum for integer numbers
-			Integer[] integerNumber = {10,25,17};
-			MaximumGenerics.maximumof3(integerNumber);
+			Integer integerNum1 = 10, integerNum2=25, integerNum3=17;
+			System.out.println("Maximum of Integer = "+maximumof3(integerNum1, integerNum2, integerNum3));
 			
 			//maximum for float numbers
-			Float[] floatNumber = {(float) 1.1, (float) 2.2, (float) 3.3} ;
-			MaximumGenerics.maximumof3(floatNumber);
+			Float floatNum1 = (float) 1.1, floatNum2 = (float) 2.2, floatNum3 = (float) 3.3;
+			System.out.println("Maximum of Float = "+maximumof3(floatNum1, floatNum2, floatNum3));
 			
 			//maximum for String
-			String[] stringValue = {"Pranali","Tani","Rutuja"} ;
-			MaximumGenerics.maximumof3(stringValue);
+			String stringValue1 = "Pranali",stringValue2 = "Tani", stringValue3 = "Rutuja";
+			System.out.println("Maximum of String = "+maximumof3(stringValue1, stringValue2, stringValue3));
 			
 		}
 
